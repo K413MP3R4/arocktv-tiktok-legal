@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TikTok OAuth Callback - ArockTV</title>
+</head>
+<body>
+  <main style="font-family:Arial,sans-serif;max-width:720px;margin:48px auto;padding:0 20px;line-height:1.6">
+    <h1>Returning to ArockTV TikTok Scheduler</h1>
+    <p>This page redirects the TikTok authorization response to the local scheduler app.</p>
+    <p>If nothing happens, make sure ArockTV TikTok Scheduler is running, then open:</p>
+    <p><a id="fallback" href="http://127.0.0.1:8788/oauth/callback">http://127.0.0.1:8788/oauth/callback</a></p>
+  </main>
+  <script>
+    const target = "http://127.0.0.1:8788/oauth/callback" + window.location.search;
+    document.getElementById("fallback").href = target;
+    window.location.replace(target);
+  </script>
+</body>
+</html>
